@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Rubik&display=swap');
+
+:root {
+    --TITLES-FONT: 'Roboto Mono', monospace;
+    --TEXT-FONT: 'Rubik', sans-serif;
+    --RED: #ef476f;
+    --YELLOW: #ffd166;
+    --GREEN: #06d6a0;
+    --BLUE: #118ab2;
+    --DARK-BLUE: #073b4c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    font-family: var(--TITLES-FONT);
+}
+
+.text {
+    font-family: var(--TEXT-FONT);
+}
+
+.btn {
+    background-color: var(--BLUE);
+    padding: 10px;
+    font-family: var(--TEXT-FONT);
+    color: white;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin: 0 15px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--DARK-BLUE);
+}
