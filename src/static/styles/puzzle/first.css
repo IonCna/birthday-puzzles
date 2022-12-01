@@ -1,0 +1,9 @@
+body {
+    background-color: coral;
+}
+
+.header {
+    text-align: center;
+    margin: 50px auto;
+    width: 65vh;
+}

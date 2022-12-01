@@ -1,5 +1,60 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+    background-color: var(--GREEN);
+}
+
 .menu {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-items: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.item {
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+.puzzle {
+  background-color: var(--BLUE);
+  color: white;
+  border-radius: 5px;
+  display: inline-flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin: 10px;
+
+  width: 150px;
+  height: 80px;
+}
+
+.puzzle:hover {
+  background-color: var(--DARK-BLUE);
+}
+
+.code {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.code input[type="text"] {
+  height: 25px;
+  outline: none;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px 0;
+  font-family: var(--TEXT-FONT);
 }

@@ -1,0 +1,17 @@
+body {
+    background-color: var(--GREEN);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.error {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn {
+    margin-top: 15px;
+}

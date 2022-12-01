@@ -4,10 +4,8 @@ const router = express.Router()
 
 router.post("/", (req, res) => {
     const { date } = req.body
-
     fs.writeFileSync("date", date, () => console.log("data saved"))
-
-    res.redirect("/api/birthday/redirect")
+    res.status(200)
 })
 
 module.exports = router

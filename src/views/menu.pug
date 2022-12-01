@@ -6,22 +6,40 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/styles/global.css")
         link(rel="stylesheet", href="/styles/menu.css")
+        script(src="/scripts/menu.js" defer) 
         title=title
     body
         .menu
-            .first-puzzle
-                a(href="/puzzle/second") Uno
-            .second-puzzle
-                a(href="/puzzle/second") Dos
-            .third-puzzle
-                a(href="/puzzle/third") Tres
-            .fourth-puzzle
-                a(href="/puzzle/third") Cuatro
-            .fifth-puzzle
-                a(href="/puzzle/third") Cinco
-            .sixth-puzzle
-                a(href="/puzzle/sixth") Seis 
+            .item
+                a(href="/puzzle/first")
+                    div(class="puzzle first")
+                        p(class="title") Fácil
+                label Done
+            .item
+                a(href="/puzzle/second")
+                    div(class="puzzle second")
+                        p(class="title") 2
+                label Done 
+            .item
+                a(href="/puzzle/second")
+                    div(class="puzzle first")
+                        p(class="title") 3
+                label Done         
+            .item
+                a(href="/puzzle/second")
+                    div(class="puzzle first")
+                        p(class="title") 4
+                label Done 
+            .item
+                a(href="/puzzle/second")
+                    div(class="puzzle first")
+                        p(class="title") 5
+                label Done 
+            .item
+                a(href="/puzzle/second")
+                    div(class="puzzle first")
+                        p(class="title") 6
+                label Done 
         .code
-            form(action="", method="post")
-                input(type="text")
-                input(class="btn" type="submit", value="Enviar")
+            input(type="text", name="code")
+            button(class="btn") Enviar
