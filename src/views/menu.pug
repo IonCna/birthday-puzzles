@@ -9,37 +9,7 @@ html(lang="en")
         script(src="/scripts/menu.js" defer) 
         title=title
     body
-        .menu
-            .item
-                a(href="/puzzle/first")
-                    div(class="puzzle first")
-                        p(class="title") Fácil
-                label Done
-            .item
-                a(href="/puzzle/second")
-                    div(class="puzzle second")
-                        p(class="title") 2
-                label Done 
-            .item
-                a(href="/puzzle/second")
-                    div(class="puzzle first")
-                        p(class="title") 3
-                label Done         
-            .item
-                a(href="/puzzle/second")
-                    div(class="puzzle first")
-                        p(class="title") 4
-                label Done 
-            .item
-                a(href="/puzzle/second")
-                    div(class="puzzle first")
-                        p(class="title") 5
-                label Done 
-            .item
-                a(href="/puzzle/second")
-                    div(class="puzzle first")
-                        p(class="title") 6
-                label Done 
+        ul(class="menu")
         .code
             input(type="text", name="code")
             button(class="btn") Enviar

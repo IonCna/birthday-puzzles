@@ -1,46 +1,42 @@
-const fs = require("fs")
-const path = require("path")
+const DateService = require("../../../services/Date.service")
 
-const root = path.resolve(__dirname, "../../../../")
+const service = new DateService()
 
 /**
- * 
  * @param { import("express").Request } req 
  * @param { import("express").Response } res 
  * @param { import("express").NextFunction } next 
  */
 
-function getDate(req, res, next) {
-    const files = fs.readdirSync(root)
-    for (let i = 0; i < files.length; i++) {
-        if (files[i] == "date") {
-            res.locals.isDate = true
-            res.locals.date = (fs.readFileSync(`${root}/date`)).toString()
-            break
-        } else res.locals.isDate = false
+async function getDate(req, res, next) {
+    try {
+        const data = await service.getDate()
+
+        const { date } = data
+
+        const saved_date = new Date(date)
+        const actual_date = new Date()
+
+        const actual = {
+            year: actual_date.getFullYear(),
+            month: actual_date.getMonth(),
+            day: actual_date.getDate()
+        }
+
+        const saved = {
+            year: saved_date.getFullYear(),
+            month: saved_date.getMonth(),
+            day: saved_date.getDate() + 1
+        }
+
+        res.locals.date = { isDate: true, actual, saved }
+
+        next()
+    } catch (error) {
+        console.log("no hay fecha guardada")
+        res.locals.date = { isDate: false }
+        next()
     }
-
-    const date  = new Date(res.locals.date)
-
-    const saved = {
-        year: date.getFullYear(),
-        month: date.getMonth(),
-        day: date.getDate() + 1
-    }
-
-    res.locals.saved = saved
-
-    const actualDate = new Date()
-
-    const actual = {
-        year: actualDate.getFullYear(),
-        month: actualDate.getMonth(),
-        day: actualDate.getDate()
-    }
-
-    res.locals.actual = actual
-
-    next()
 }
 
 module.exports = getDate

@@ -17,48 +17,45 @@ app.set("views", views_path)
 const static_path = path.resolve(__dirname, "static")
 app.use(express.static(static_path))
 
+// start
+
 app.get("/", getDate, (req, res) => {
-    const { isDate } = res.locals
+    const { isDate } = res.locals.date
 
-    if (isDate == false) return res.render("index", { title: "Regalo" })
+    if (!isDate) return res.render("index")
 
-    const { saved, actual } = res.locals
-
-    if (
-        actual.year >= saved.year &&
-        actual.month >= saved.month &&
-        actual.day >= saved.day
-    ) {
-        res.redirect(`${URL}/menu`)
-    } else {
-        res.redirect(`${URL}/notNow`)
-    }
+    res.redirect("/menu")
 })
+
+// menu
 
 app.get("/menu", getDate, (req, res) => {
-    const { isDate } = res.locals
-    if (isDate == false) return res.render("error/403")
-    res.render("menu", {
-        title: "Menu",
-        first: 0,
-        second: 0,
-        third: 0,
-        fourth: 0,
-        five: 0,
-        sixth: 0
-    })
+    const { isDate, actual, saved } = res.locals.date
+    if (!isDate) return res.render("error/403")
+
+    console.log(actual, saved)
+
+    if (
+        actual.year >= saved.year && 
+        actual.month >= saved.month && 
+        actual.day >= saved.day
+        ) {
+        return res.render("menu")
+    }
+
+    res.redirect("/notNow")
 })
 
-app.get("/notNow", getDate, (req, res) => {
-    const { isDate } = res.locals
+// fuera de tiempo
 
-    if (isDate == false) {
+app.get("/notNow", getDate, (req, res) => {
+    const { isDate, actual, saved } = res.locals.date
+
+    if (!isDate) {
         return res.redirect("/")
     }
 
     const oneDay = 24 * 60 * 60 * 1000
-
-    const { actual, saved } = res.locals
 
     const first = new Date(actual.year, actual.month, actual.day)
     const second = new Date(saved.year, saved.month, saved.day)
@@ -75,4 +72,4 @@ app.get("/notNow", getDate, (req, res) => {
 
 API(app)
 
-app.listen(PORT, () => console.log(`Server listening on port http://26.89.117.213:${PORT}`))
+app.listen(PORT, () => console.log(`Server listening on port ${URL}:${PORT}`))

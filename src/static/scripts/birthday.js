@@ -3,25 +3,30 @@ const birthdayDOM = document.getElementById("birthdayDOM")
 const bars = document.getElementById("bars")
 const error = document.getElementById("error")
 
+function redirect() {
+    window.location.href = "http://26.89.117.213:3000"
+}
+
 buttonDOM.onclick = async () => {
     const birthday = birthdayDOM.value
 
-    if (!birthday) {
-        return error.style.display = "block"
-    }
+    !birthday && (error.style.display = "block");
 
     const date = new Date(birthday)
 
-    fetch("http://26.89.117.213:3000/api/birthday", {
+    const response = await fetch("http://26.89.117.213:3000/api/birthday/set", {
         method: "POST",
-        body: JSON.stringify({ date: date }),
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({ date: date }),
     })
 
-    window.location.href = "http://26.89.117.213:3000"
+    const data = await response.json()
+    console.log(data)
+
+    redirect()
 }
 
 bars.onclick = () => {

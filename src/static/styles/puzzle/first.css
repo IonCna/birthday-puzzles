@@ -5,5 +5,23 @@ body {
 .header {
     text-align: center;
     margin: 50px auto;
-    width: 65vh;
+    width: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.start {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.puzzle {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.question {
+    display: none;
 }
