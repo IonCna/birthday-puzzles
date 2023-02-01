@@ -10,6 +10,16 @@ html(lang="en")
         title=title
     body
         ul(class="menu")
+            each puzzle in status
+                a(class="puzzle" href=`/puzzle/${puzzle.redirects}`)
+                    label #{puzzle.difficulty}
+                    if puzzle.complete
+                        label COMPLETADO
         .code
-            input(type="text", name="code")
-            button(class="btn") Enviar
+            input(type="text", name="code" id="code")
+            button(class="btn" id="send") Enviar
+            .error-label(id="error")
+                .bars(id="bars")
+                    .bar1
+                    .bar2
+                p(class="text") código incorrecto

@@ -17,9 +17,11 @@ const URI = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@birthday.05z6shq.mongodb.ne
 })();
 
 const statusSchema = new mongoose.Schema({
-    puzzle_id: Number,
-    name: String,
-    status: String,
+    id: Number,
+    complete: Boolean,
+    difficulty: String,
+    code: String,
+    redirects: String
 });
 
 const dateSchema = new mongoose.Schema({
@@ -27,7 +29,13 @@ const dateSchema = new mongoose.Schema({
     id: Number
 })
 
+const codeSchema = new mongoose.Schema({
+    code: String,
+    id: Number
+})
+
 const status = mongoose.model("status", statusSchema);
 const date = mongoose.model("date", dateSchema)
+const code = mongoose.model("codes", codeSchema)
 
-module.exports = { status, date };
+module.exports = { status, date, code };

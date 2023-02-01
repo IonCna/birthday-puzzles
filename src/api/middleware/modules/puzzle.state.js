@@ -1,3 +1,6 @@
+const StatusService = require("../../../services/status.service")
+
+const service = new StatusService()
 
 /**
  * 
@@ -6,7 +9,8 @@
  * @param { import("express").NextFunction } next 
  */
 
-function getPuzzleStates(req, res, next) {
+async function getPuzzleStates(req, res, next) {
+    res.locals.progress = await service.getGlobalStatus()
     next()
 }
 

@@ -1,0 +1,44 @@
+{
+    "first": {
+        "id": 0,
+        "complete": false,
+        "difficulty": "fácil",
+        "code": "t",
+        "redirects": "first"
+    },
+    "second": {
+        "id": 1,
+        "complete": false,
+        "difficulty": "fácil",
+        "code": "3",
+        "redirects": "second"
+    },
+    "third": {
+        "id": 2,
+        "complete": false,
+        "difficulty": "intermedio",
+        "code": "4",
+        "redirects": "third"
+    },
+    "fourth": {
+        "id": 3,
+        "complete": false,
+        "difficulty": "intermedio",
+        "code": "m",
+        "redirects": "fourth"
+    },
+    "fifth": {
+        "id": 4,
+        "complete": false,
+        "difficulty": "difícil",
+        "code": "0",
+        "redirects": "fifth"
+    },
+    "sixth": {
+        "id": 5,
+        "complete": false,
+        "difficulty": "imposible",
+        "code": "!",
+        "redirects": "sixth"
+    }
+}

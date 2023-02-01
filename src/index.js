@@ -2,7 +2,7 @@ const express = require("express")
 const path = require("path")
 
 const { PORT, URL } = require("./config")
-const [getDate] = require("./api/middleware")
+const [getDate, getPuzzleStates] = require("./api/middleware")
 const API = require("./api")
 
 const app = express()
@@ -29,21 +29,20 @@ app.get("/", getDate, (req, res) => {
 
 // menu
 
-app.get("/menu", getDate, (req, res) => {
+app.get("/menu", getDate, getPuzzleStates, (req, res) => {
     const { isDate, actual, saved } = res.locals.date
     if (!isDate) return res.render("error/403")
 
-    console.log(actual, saved)
-
     if (
-        actual.year >= saved.year && 
-        actual.month >= saved.month && 
-        actual.day >= saved.day
-        ) {
-        return res.render("menu")
+        actual.year <= saved.year &&
+        actual.month <= saved.month &&
+        actual.day < saved.day) {
+        return res.redirect("/notNow")
     }
 
-    res.redirect("/notNow")
+    const { progress } = res.locals
+
+    res.render("menu", { title: "Menu", status: progress })
 })
 
 // fuera de tiempo
