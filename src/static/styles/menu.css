@@ -7,6 +7,10 @@ body {
     background-color: var(--GREEN);
 }
 
+label {
+  display: block;
+}
+
 .menu {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -20,12 +24,9 @@ body {
     text-align: center;
 }
 
-label {
-    display: block;
-}
-
 .puzzle {
   background-color: var(--BLUE);
+  position: relative;
   color: white;
   border-radius: 5px;
   display: inline-flex;
@@ -43,18 +44,36 @@ label {
   background-color: var(--DARK-BLUE);
 }
 
+.complete {
+  background-color: gray;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.finish-code {
+  color: red;
+  font-size: 30px;
+  bottom: 0px;
+  position: absolute;
+}
+
 .code {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.inp {
+  background-color: white;
+  border-radius: 25px;
+  padding: 10px;
+}
+
 .code input[type="text"] {
   height: 25px;
   outline: none;
   font-size: 18px;
-  border: 1px solid black;
+  border: none;
   border-radius: 5px;
-  padding: 10px 0;
   font-family: var(--TEXT-FONT);
 }

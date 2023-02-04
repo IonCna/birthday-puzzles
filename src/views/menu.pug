@@ -11,15 +11,19 @@ html(lang="en")
     body
         ul(class="menu")
             each puzzle in status
-                a(class="puzzle" href=`/puzzle/${puzzle.redirects}`)
-                    label #{puzzle.difficulty}
-                    if puzzle.complete
-                        label COMPLETADO
+                if puzzle.complete
+                    a(class="puzzle complete" disabled href=`/puzzle/${puzzle.redirects}`)
+                        label COMPLETE
+                        label(class="finish-code text") #{puzzle.code}
+                else
+                    a(class="puzzle" href=`/puzzle/${puzzle.redirects}`)
+                        label #{puzzle.difficulty}
         .code
-            input(type="text", name="code" id="code")
-            button(class="btn" id="send") Enviar
-            .error-label(id="error")
-                .bars(id="bars")
-                    .bar1
-                    .bar2
-                p(class="text") código incorrecto
+            .inp
+                input(type="text", name="code" id="code" placeholder="código")
+                button(class="btn" id="send") Enviar
+        .error-label(id="error")
+            .bars(id="bars")
+                .bar1
+                .bar2
+            p(class="text") código incorrecto

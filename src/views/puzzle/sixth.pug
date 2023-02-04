@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles/puzzle/sixth.css")
+        link(rel="stylesheet", href="/styles/global.css")
+        script(src="/scripts/puzzle/sixth.js" defer) 
+        title IMPOSIBLE
+    body
+        h1 Este puzzle se divide en 2 partes 😈, tu eliges con cual iniciar
+        button(id="dev" class="btn") PROGRAMACIÓN
+        button(id="maths" class="btn") MATEMÁTICAS
+        .part(id="devDOM")
+            p Quiero que abras la consola ahi encontraras mas instrucciones
+        .part(id="mathDOM")
+            p toma para empezar resuelve las siguientes derivadas y la integral
+            .one
+                img(src="", alt="")
+                input(type="text")
+                button(class="btn") verificar
+            .two
+                img(src="", alt="")
+                input(type="text")
+                button(class="btn") verificar
+            .three
+                img(src="", alt="")
+                input(type="text")
+                button(class="btn") verificar
+            button(class="btn") ENVIAR
+            .hex
+                .img
+                    img(src="", alt="")
+                    p(id="result") resultado

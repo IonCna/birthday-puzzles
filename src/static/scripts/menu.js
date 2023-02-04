@@ -7,8 +7,9 @@ function jumpError() {
 }
 
 btnSend.onclick = async () => {
-    const code = document.getElementById("code").value
+    const code = (document.getElementById("code").value).toLowerCase()
 
+    console.log(code)
     if(!code) jumpError()
 
     const response = await fetch("http://26.89.117.213:3000/api/code", {

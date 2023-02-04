@@ -1,0 +1,22 @@
+body {}
+
+.instrucciones {}
+
+.song {
+    display: none;
+}
+
+.word {
+    border: 1px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 95px;
+}
+
+.word:focus {
+    outline: none;
+}
+
+.validar {
+}

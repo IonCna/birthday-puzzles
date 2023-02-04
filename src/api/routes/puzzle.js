@@ -10,19 +10,19 @@ router.get("/second", (req, res) => {
 })
 
 router.get("/third", (req, res) => {
-    res.render("puzzle/first")
+    res.render("puzzle/third")
 })
 
 router.get("/fourth", (req, res) => {
-    res.render("puzzle/first")
+    res.render("puzzle/")
 })
 
 router.get("/fifth", (req, res) => {
-    res.render("puzzle/first")
+    res.render("puzzle/fifth")
 })
 
 router.get("/sixth", (req, res) => {
-    res.render("puzzle/first")
+    res.render("puzzle/sixth")
 })
 
 

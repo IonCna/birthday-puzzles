@@ -4,6 +4,7 @@ const router = express.Router()
 const birthday = require("./routes/birthday")
 const puzzle = require("./routes/puzzle")
 const code = require("./routes/code")
+const gift = require("./routes/gift")
 
 /**
  * 
@@ -17,6 +18,7 @@ function API(app) {
     router.use("/code", code)
 
     app.use("/puzzle", puzzle)
+    app.use("/gift", gift)
 }
 
 module.exports = API

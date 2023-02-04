@@ -4,5 +4,63 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-    body 
+        link(rel="stylesheet", href="/styles/global.css")
+        link(rel="stylesheet", href="/styles/puzzle/second.css")
+        script(src="/scripts/puzzle/second.js" defer) 
+        title second-puzzle
+    body
+        .instrucciones
+            h1 para este reto tienes que rellenar las palabras faltantes de las canciones
+            h1 NO puedes buscar la letra, puedes buscar la canción y a oído rellenar las palabras faltantes
+        button(id="start") EMPEZAR
+        .song
+            p 
+                | Que se quede el 
+                input(type="text" class="word")
+                | sin estrellas
+            p 
+                | O que pierda el ancho mar su 
+                input(type="text" class="word")
+
+            p 
+                | Pero el 
+                input(type="text" class="word")
+                | de tus ojos que no
+                input(type="text" class="word")
+            p 
+                | Y el 
+                input(type="text" class="word")
+                | de tu piel se quede igual
+
+            p 
+                | Si perdiera el 
+                input(type="text" class="word")
+                | su belleza
+
+            p 
+                | Y las flores su 
+                input(type="text" class="word")
+                | y su color
+
+            p 
+                | No sería tan inmensa mi 
+                input(type="text" class="word")
+
+            p 
+                | Como aquella de quedarme sin tu 
+                input(type="text" class="word")
+
+            p 
+                | Me importas 
+                input(type="text" class="word")
+                | , y tú, y tú
+            p 
+                | Y solamente tú, y 
+                input(type="text" class="word")
+                | , y tú
+            p 
+                | Me importas tú, y tú, y 
+                input(type="text" class="word")
+            input(type="text" class="word")
+            button(id="validar" class="validar") VALIDAR
+        .song
