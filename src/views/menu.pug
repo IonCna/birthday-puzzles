@@ -6,6 +6,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/styles/global.css")
         link(rel="stylesheet", href="/styles/menu.css")
+        link(rel="shortcut icon", href="/images/icon.png", type="image/x-icon")
         script(src="/scripts/menu.js" defer) 
         title=title
     body
@@ -13,11 +14,11 @@ html(lang="en")
             each puzzle in status
                 if puzzle.complete
                     a(class="puzzle complete" disabled href=`/puzzle/${puzzle.redirects}`)
-                        label COMPLETE
+                        label(class="text") COMPLETE
                         label(class="finish-code text") #{puzzle.code}
                 else
                     a(class="puzzle" href=`/puzzle/${puzzle.redirects}`)
-                        label #{puzzle.difficulty}
+                        label(class="text") #{puzzle.difficulty}
         .code
             .inp
                 input(type="text", name="code" id="code" placeholder="código")

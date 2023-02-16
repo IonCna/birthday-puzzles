@@ -35,6 +35,19 @@ const codeSchema = new mongoose.Schema({
 })
 
 const status = mongoose.model("status", statusSchema);
+
+(async function () {
+    const data = await status.find()
+
+    const { length } = data
+
+    if(length < 1) {
+        const defaultStatus = require("../config/default.json")
+        
+        status.insertMany(defaultStatus.data)
+    }
+})();
+
 const date = mongoose.model("date", dateSchema)
 const code = mongoose.model("codes", codeSchema)
 

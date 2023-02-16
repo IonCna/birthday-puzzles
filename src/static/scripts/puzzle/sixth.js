@@ -30,6 +30,54 @@ var first = false
 var second = false
 var third = false
 
+function check() {
+    if (first && second && third) {
+        console.log(`
+        LO LOGRASTE?!
+        Lograste acabar el primer ejercicio, estoy orgulloso de ti <3
+        espero y no hayas hecho trampas ehh... 😠
+
+        como sea aquí está la primera parte de el código, ahora toca la segunda 😈
+        `)
+
+        console.error("[SYSTEM]: El sistema se autodestruirá en...")
+
+        setTimeout(() => {
+            console.error("5...")
+        }, 5000)
+
+        setTimeout(() => {
+            console.error("4...")
+        }, 6000)
+
+        setTimeout(() => {
+            console.error("3...")
+        }, 7000)
+
+        setTimeout(() => {
+            console.error("2...")
+        }, 8000)
+
+        setTimeout(() => {
+            console.error("1...")
+        }, 9000)
+
+        setTimeout(() => {
+            console.error("Suerte :')")
+        }, 10000)
+
+        setTimeout(() => {
+            console.clear()
+            console.log("Código: W94")
+            console.warn("consejo: escribe el código en otro lado <3")
+        }, 11000)
+
+        first = false
+        second = false
+        third = false
+    }
+}
+
 function correct() {
     console.warn("LO LOGRASTE :D")
 }
@@ -54,7 +102,6 @@ function verify(cb, index) {
     const ages = [13, 18, 2, 35, 12, 99, 7]
 
     function isOlder(age) {
-        console.log(age >= 18)
         return age >= 18
     }
 
@@ -79,12 +126,14 @@ function verify(cb, index) {
             if (first != false) correct()
             else error()
 
+            check()
+
             break;
         case 2:
             const user_arr = cb(array)
             const correct_arr = multiply(array)
 
-            for(let i = 0; i < correct_arr.length; i++) {
+            for (let i = 0; i < correct_arr.length; i++) {
                 if (user_arr[i] != correct_arr[i]) {
                     second = false
                     break
@@ -94,24 +143,31 @@ function verify(cb, index) {
             if (second !== false) correct()
             else error()
 
+            check()
+
             break;
         case 3:
             const esMayor = ages.map((item) => {
                 const user_ans = cb(item)
                 const correct_ans = isOlder(item)
 
-                return user_ans != correct_ans
+                return user_ans == correct_ans
             })
+
+            console.log(esMayor)
 
             for (let i = 0; i < esMayor.length; i++) {
                 const element = esMayor[i];
 
-                if(element !== true) third = false
+                if (element !== true) third = false
                 else third = true
             }
 
             if (third !== false) correct()
             else error()
+
+            check()
+
             break;
         default:
             console.error("Eso no oye!")
@@ -149,6 +205,19 @@ function startPartDev() {
 }
 
 // parte 2
+
+const results = [53, 42, 43]
+
+const getMathsResults = document.getElementById("getMathsResults")
+
+getMathsResults.onclick = () => {
+    const results = document.querySelectorAll(".verify")
+    const ans = document.getElementById(".ans")
+
+    for (let i = 0; i < ans.length; i++) {
+        const element = array[i];
+    }
+}
 
 function startPartMath() {
     console.clear()

@@ -9,27 +9,33 @@ html(lang="en")
         script(src="/scripts/puzzle/sixth.js" defer) 
         title IMPOSIBLE
     body
-        h1 Este puzzle se divide en 2 partes 😈, tu eliges con cual iniciar
-        button(id="dev" class="btn") PROGRAMACIÓN
-        button(id="maths" class="btn") MATEMÁTICAS
-        .part(id="devDOM")
-            p Quiero que abras la consola ahi encontraras mas instrucciones
-        .part(id="mathDOM")
-            p toma para empezar resuelve las siguientes derivadas y la integral
-            .one
-                img(src="", alt="")
-                input(type="text")
-                button(class="btn") verificar
-            .two
-                img(src="", alt="")
-                input(type="text")
-                button(class="btn") verificar
-            .three
-                img(src="", alt="")
-                input(type="text")
-                button(class="btn") verificar
-            button(class="btn") ENVIAR
-            .hex
-                .img
-                    img(src="", alt="")
-                    p(id="result") resultado
+        .puzzle
+            h1(class="title") Este puzzle se divide en 2 partes 😈, tu eliges con cual iniciar
+            button(id="dev", class="btn") PROGRAMACIÓN
+            button(id="maths", class="btn") MATEMÁTICAS
+            .part(id="devDOM")
+                p(class="text") Quiero que abras la consola ahi encontraras mas instrucciones
+            .part(id="mathDOM")
+                p(class="text") toma para empezar resuelve las siguientes derivadas y la integral
+                .deriv
+                    img(src="/images/example.png", alt="")
+                    input(class="ans" type="number" id="first")
+                    button(class="btn verify" id="firstVerify") verificar
+                .deriv
+                    img(src="/images/example.png", alt="")
+                    input(class="ans" type="number" id="second")
+                    button(class="btn verify" id="secondVerify") verificar
+                .deriv
+                    img(src="/images/example.png", alt="")
+                    input(class="ans" type="number" id="third")
+                    button(class="btn verify" id="thirdVerify") verificar
+                button(class="btn" id="getMathsResults") ENVIAR
+                .hex
+                    .img
+                        img(src="/images/hex.png", alt="")
+                        p(id="result", class="text") 53 4243
+                    button(class="btn") ????
+                    input(type="text")
+                    .result
+                        p(id="code_result", class="text") SBC
+                

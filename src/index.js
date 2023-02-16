@@ -41,7 +41,6 @@ app.get("/menu", getDate, getPuzzleStates, (req, res) => {
     }
 
     const { progress } = res.locals
-
     res.render("menu", { title: "Menu", status: progress })
 })
 

@@ -1,3 +1,36 @@
+.puzzle {
+    text-align: center;
+}
+
+.deriv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deriv img {
+    width: 350px;
+}
+
+.hex {
+    display: none;
+}
+
+.hex img {
+    width: 500px;
+}
+
+.hex .img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.img p {
+    position: absolute;
+    top: 50%;
+}
+
 .part {
     display: none;
 }
