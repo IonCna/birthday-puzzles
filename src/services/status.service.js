@@ -10,6 +10,11 @@ class StatusService {
         const data = await status.findOne({ id: id })
         return data
     }
+
+    async update(id, complete) {
+        const data = await status.updateOne({id: id, complete: complete })
+        return data
+    }
 }
 
 module.exports = StatusService

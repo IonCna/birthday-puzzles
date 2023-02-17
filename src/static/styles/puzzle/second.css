@@ -1,4 +1,11 @@
-body {}
+body {
+    background-color: var(--YELLOW);
+    text-align: center;
+}
+
+.text {
+    font-size: 35px;
+}
 
 .instrucciones {}
 
@@ -11,7 +18,9 @@ body {}
     border-top: none;
     border-left: none;
     border-right: none;
-    width: 95px;
+    width: 135px;
+    font-size: 35px;
+    background-color: var(--YELLOW);
 }
 
 .word:focus {

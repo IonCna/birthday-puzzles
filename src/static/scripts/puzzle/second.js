@@ -5,38 +5,17 @@ btnStart.onclick = () => {
     songs[0].style.display = "block"
 }
 
-const btnValidar = document.getElementById("validar")
-
-function verify(answers, correct) {
-    const { value } = correct
-    return value == answers
+function verify(input, expected) {
+    return input == expected
 }
 
-btnValidar.onclick = () => {
-    const words = document.querySelectorAll(".word")
-    const first_song = [
-        "infinito",
-        "inmensidad",
-        "negro",
-        "muera",
-        "canela",
-        "arcoíris",
-        "perfume",
-        "tristeza",
-        "amor",
-        "tu",
-        "tu",
-        "tu",
-        "Y nadie más que tu"
-    ]
+const btnValidate = document.getElementsByClassName("validar")
 
-    for(let i =0; i < words.length; i++) {
-        const isCorrect = verify(words[i], first_song[i])
-        console.log(isCorrect)
+for (let i = 0; i < btnValidate.length; i++) {
+    const button = btnValidate[i]
+
+    button.onclick = () => {
+
     }
-
-    const isCorrect = verify(words, first_song)
-    console.log(isCorrect)
 }
 
-const second_song = []

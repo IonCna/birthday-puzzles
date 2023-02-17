@@ -5,6 +5,7 @@ const birthday = require("./routes/birthday")
 const puzzle = require("./routes/puzzle")
 const code = require("./routes/code")
 const gift = require("./routes/gift")
+const status = require("./routes/status")
 
 /**
  * 
@@ -16,6 +17,7 @@ function API(app) {
 
     router.use("/birthday", birthday)
     router.use("/code", code)
+    router.use("/status", status)
 
     app.use("/puzzle", puzzle)
     app.use("/gift", gift)
