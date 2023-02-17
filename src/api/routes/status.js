@@ -5,10 +5,15 @@ const router = express.Router()
 const service = new StatusService()
 
 router.put("/", async (req, res) => {
-    const { index, complete } = req.query
-    await service.update(parseInt(index), complete)
-
-    res.status(200).json({ message: "status updated" })
+    try {
+        const { index, complete } = req.query
+        let isComplete = Boolean(complete)
+        await service.update(parseInt(index), isComplete)
+    
+        res.status(200).json({ message: "status updated" })
+    } catch (error) {
+        res.status(500).json({ message: "no se pudo actualizar" })
+    }
 })
 
 module.exports = router

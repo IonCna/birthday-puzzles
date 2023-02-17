@@ -12,8 +12,11 @@ class StatusService {
     }
 
     async update(id, complete) {
-        const data = await status.updateOne({id: id, complete: complete })
-        return data
+        const item = await this.getOne(id)
+        const { _id } = item
+
+        await status.findByIdAndUpdate(_id, { complete })
+
     }
 }
 

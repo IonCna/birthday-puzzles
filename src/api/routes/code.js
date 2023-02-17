@@ -8,10 +8,7 @@ const service = new CodeService()
 router.post("/", async (req, res) => {
     try {
         const { code } = req.body
-        const access_code = await service.getCode()
-
-        console.log(code)
-        console.log(access_code)
+        const access_code = await service.getCode();
 
         code === access_code.code 
             ? res.status(200).json({ message: "code correct", status: 0 }) 

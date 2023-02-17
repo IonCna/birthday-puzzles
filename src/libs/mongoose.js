@@ -37,14 +37,19 @@ const codeSchema = new mongoose.Schema({
 const status = mongoose.model("status", statusSchema);
 
 (async function () {
-    const data = await status.find()
+    try {
+        const db = await status.find()
 
-    const { length } = data
+        const { length } = db
 
-    if(length < 1) {
-        const defaultStatus = require("../config/default.json")
-        
-        status.insertMany(defaultStatus.data)
+        if (length < 1) {
+            const { data } = require("../config/default.json")
+
+            await status.insertMany(data)
+            console.log("STATUS DEFAULT WAS CREATED")
+        }
+    } catch (error) {
+        console.error(error)
     }
 })();
 
