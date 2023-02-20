@@ -1,3 +1,7 @@
+body {
+    background-color: var(--GREEN);
+}
+
 .puzzle {
     text-align: center;
 }

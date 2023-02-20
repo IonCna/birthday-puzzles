@@ -10,19 +10,19 @@ router.get("/second", (req, res) => {
 })
 
 router.get("/third", (req, res) => {
-    res.render("puzzle/third")
+    res.render("error/inProgress")
 })
 
 router.get("/fourth", (req, res) => {
-    res.render("puzzle/fourth")
+    res.render("error/inProgress")
 })
 
 router.get("/fifth", (req, res) => {
-    res.render("puzzle/fifth")
+    res.render("error/inProgress")
 })
 
 router.get("/sixth", (req, res) => {
-    res.render("puzzle/sixth")
+    res.render("error/inProgress")
 })
 
 
