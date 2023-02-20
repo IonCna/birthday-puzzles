@@ -49,8 +49,6 @@ function verify(ans) {
     const answers = document.getElementsByClassName(ans)
     const corrects = correct_answers[ans]
 
-    if (ans == "first") return true
-
     let status = true
 
     for (let i = 0; i < answers.length; i++) {

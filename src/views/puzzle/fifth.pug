@@ -5,5 +5,73 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="shortcut icon", href="/images/icon.png", type="image/x-icon")
-        title Document
-    body 
+        link(rel="stylesheet", href="/styles/global.css")
+        link(rel="stylesheet", href="/styles/puzzle/fifth.css")
+        script(src="/scripts/puzzle/fifth.js" defer) 
+        title fifth-puzzle
+    body
+        .instructions
+            h2(class="title")
+                | Para este vas a tocar P I A N O
+            p(class="text")
+                | toca las notas en orden
+                | para desbloquear el código
+            button(class="btn") Empezar
+        .puzzles
+            .first
+                h2(class="title") Tu primera canción que vas a tocar es:
+                p(class="text") [ C B A G F G A C B A G F E ]
+                h3(class="title") LO LOGRASTE!
+            .second
+                h2(class="title") Aquí tu segunda canción, sigue así
+                p(class="text") [ G G E F G A G F E D E E C D E F E D C B ]
+                H3(class="title") QUE HERMOSA CANCIÓN! :,)
+            .third
+                h2(class="title") La tercera es la vencida, toca esta y se desbloqueará el siguiente código
+                p(class="text") [ F F G A F C A G C G F D A F E E D E F G C F G A A# A# A G F G ]
+        ul(class="piano")
+            li(class="white b start note")
+                P B
+            li(class="white c note")
+                p C
+            li(class="black cs note") 
+                p C#
+            li(class="white d note")
+                p D
+            li(class="black ds note") 
+                p D#
+            li(class="white e note") 
+                p E
+            li(class="white f note") 
+                p F
+            li(class="black fs note") 
+                p F#
+            li(class="white g note") 
+                p G
+            li(class="black gs note") 
+                p G#
+            li(class="white a note") 
+                p A
+            li(class="black as note") 
+                p A#
+            li(class="white b note") 
+                p B
+            li(class="white c note") 
+                p C
+            li(class="black cs note") 
+                p C#
+            li(class="white d note") 
+                p D
+            li(class="black ds note") 
+                p D#
+            li(class="white e note") 
+                p E
+            li(class="white f end note") 
+                p F
+        .clear
+            button(class="btn", id="reset") Reset
+        .error-label(id="error")
+            .bars(id="bars")
+                .bar1
+                .bar2
+            p(class="text") código incorrecto

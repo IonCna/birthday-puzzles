@@ -10,7 +10,8 @@ const service = new StatusService()
  */
 
 async function getPuzzleStates(req, res, next) {
-    res.locals.progress = await service.getGlobalStatus()
+    const progress = await service.getGlobalStatus()
+    res.locals.progress = progress.sort((a,b) => a.id-b.id)
     next()
 }
 

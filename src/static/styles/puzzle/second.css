@@ -7,7 +7,9 @@ body {
     font-size: 35px;
 }
 
-.instrucciones {}
+.btn {
+    margin: 30px 0px;
+}
 
 .song {
     display: none;
@@ -25,7 +27,4 @@ body {
 
 .word:focus {
     outline: none;
-}
-
-.validar {
 }

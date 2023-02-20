@@ -44,6 +44,10 @@ label {
   background-color: var(--DARK-BLUE);
 }
 
+.puzzle label:hover {
+  cursor: pointer;
+}
+
 .complete {
   background-color: gray;
   pointer-events: none;
