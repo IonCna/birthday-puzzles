@@ -14,7 +14,7 @@ btnSend.onclick = async () => {
     console.log(code)
     if(!code) jumpError()
 
-    const response = await fetch(`${URL}/api/code`, {
+    const response = await fetch(`/api/code`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
@@ -27,7 +27,7 @@ btnSend.onclick = async () => {
     
     const { status } = data
 
-    if (status < 1) window.location.href = `${URL}/gift?code=${code}`
+    if (status < 1) window.location.href = `/gift?code=${code}`
     else jumpError()
 }
 

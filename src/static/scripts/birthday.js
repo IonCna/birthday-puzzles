@@ -16,7 +16,7 @@ buttonDOM.onclick = async () => {
 
     const date = new Date(birthday)
 
-    const response = await fetch(`${URL}/api/birthday/set`, {
+    const response = await fetch(`/api/birthday/set`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
