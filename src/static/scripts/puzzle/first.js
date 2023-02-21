@@ -3,6 +3,8 @@ const questions = document.getElementsByClassName("question")
 
 const results = [ "periferico", "pompompurin", "cuemanco", "soda stereo", "papá", "metrobus" ]
 
+const URL = window.location.host
+
 start.onclick = () => {
     questions[0].style.display = "block"
 }
@@ -23,11 +25,11 @@ for(let i = 0; i < verify_btn.length; i++) {
         if (i + 1 == 6) {
             const result = input[i].value
             if (result == results[i]) {
-                fetch("http://26.89.117.213:3000/api/status?index=0&complete=true", {
+                fetch(`${URL}/api/status?index=0&complete=true`, {
                     method: "PUT"
                 })
                 .then(() => {
-                    window.location.href = "http://26.89.117.213:3000"
+                    window.location.href = URL
                 });
             } else error[i].style.display = "block"
         } else {

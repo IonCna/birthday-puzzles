@@ -3,8 +3,10 @@ const birthdayDOM = document.getElementById("birthdayDOM")
 const bars = document.getElementById("bars")
 const error = document.getElementById("error")
 
+const URL = window.location.host
+
 function redirect() {
-    window.location.href = "http://26.89.117.213:3000"
+    window.location.href = URL
 }
 
 buttonDOM.onclick = async () => {
@@ -14,7 +16,7 @@ buttonDOM.onclick = async () => {
 
     const date = new Date(birthday)
 
-    const response = await fetch("http://26.89.117.213:3000/api/birthday/set", {
+    const response = await fetch(`${URL}/api/birthday/set`, {
         method: "POST",
         headers: {
             'Accept': 'application/json',
