@@ -41,7 +41,7 @@ app.get("/menu", getDate, getPuzzleStates, (req, res) => {
     }
 
     const { progress } = res.locals
-    res.render("menu", { title: "Menu", status: progress })
+    res.render("menu", { title: "Menu", status: progress, API: URL })
 })
 
 // fuera de tiempo
@@ -70,4 +70,4 @@ app.get("/notNow", getDate, (req, res) => {
 
 API(app)
 
-app.listen(PORT, () => console.log(`Server listening on port ${URL}:${PORT}`))
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}`))
