@@ -1,16 +1,18 @@
-.app {
-    height: 100vh;
+body {
     background-color: var(--YELLOW);
 }
 
+.app {
+    height: 100vh;
+}
+
 .container {
-    position: absolute;
     text-align: center;
+    margin-top: 15px;
 }
 
 h1 {
     cursor: default;
-    margin: 15px 0;
 }
 
 input[type="date"] {
