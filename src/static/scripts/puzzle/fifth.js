@@ -1,8 +1,6 @@
 const notes = document.getElementsByClassName("note")
 const reset = document.getElementById("reset")
 
-const URL = window.location.host
-
 var hist = []
 
 reset.onclick = () => {
@@ -59,7 +57,7 @@ function verify() {
         } else second = false
 
         if (second) {
-            fetch(`${URL}/api/status?index=4&complete=true`)
+            fetch(`/api/status?index=4&complete=true`)
 
             var count = 10
             const counter = document.getElementById("counter")
@@ -69,7 +67,7 @@ function verify() {
             setInterval(() => {
                 count = count - 1
                 counter.innerHTML = count
-                if (count <= 0) window.location.href = URL
+                if (count <= 0) window.location.href = "/menu"
             }, 1000)
         }
     }

@@ -3,10 +3,8 @@ const birthdayDOM = document.getElementById("birthdayDOM")
 const bars = document.getElementById("bars")
 const error = document.getElementById("error")
 
-const URL = window.location.host
-
 function redirect() {
-    window.location.href = URL
+    window.location.href = "/"
 }
 
 buttonDOM.onclick = async () => {

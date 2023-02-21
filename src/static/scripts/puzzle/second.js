@@ -86,10 +86,10 @@ for (let i = 0; i < verifyBTN.length; i++) {
                 const secondCorrect = verify("second")
 
                 if (secondCorrect) {
-                    fetch("http://26.89.117.213:3000/api/status?index=1&complete=true", 
+                    fetch("/api/status?index=1&complete=true", 
                     { method: "PUT" })
                     .then(() => {
-                        window.location.href = "http://26.89.117.213:3000/menu"
+                        window.location.href = "/menu"
                     })
                 } else errors[i].style.display = "block"
 
