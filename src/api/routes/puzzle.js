@@ -10,7 +10,7 @@ router.get("/second", (req, res) => {
 })
 
 router.get("/third", (req, res) => {
-    res.render("puzzle/third")
+    res.render("error/inProgress")
 })
 
 router.get("/fourth", (req, res) => {
