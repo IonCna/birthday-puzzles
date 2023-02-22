@@ -1,8 +1,11 @@
 const btn = document.getElementById("btn")
-const code = document.getElementById("code")
+const hidden = document.getElementsByClassName("hide")
 
-btn.onclick = async () => {
-    code.style.display = "block"
+btn.onclick = async () => {    
+    for (let i = 0; i < hidden.length; i++) {
+        const element = hidden[i];
+        element.style.display = "block"
+    }
 
     try {
         await navigator.clipboard.writeText(code.innerHTML)
@@ -11,4 +14,5 @@ btn.onclick = async () => {
         console.error("Error al copiar el código")
     }
 }
+
 
