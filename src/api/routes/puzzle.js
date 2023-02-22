@@ -14,15 +14,15 @@ router.get("/third", (req, res) => {
 })
 
 router.get("/fourth", (req, res) => {
-    res.render("error/inprogress")
+    res.render("error/inProgress")
 })
 
 router.get("/fifth", (req, res) => {
-    res.render("error/inprogress")
+    res.render("error/inProgress")
 })
 
 router.get("/sixth", (req, res) => {
-    res.render("error/inprogress")
+    res.render("error/inProgress")
 })
 
 
