@@ -4,6 +4,8 @@ const router = express.Router()
 
 const service = new CodeService()
 
+const { CODE } = require("../../config")
+
 router.get("/", async (req, res) => {
     const { code } = req.query
     access_code = await service.getCode()
@@ -13,7 +15,7 @@ router.get("/", async (req, res) => {
     }
 
     
-    res.render("gift")
+    res.render("gift", { code: CODE })
 })
 
 module.exports = router

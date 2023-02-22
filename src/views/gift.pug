@@ -6,6 +6,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="/styles/global.css")
         link(rel="stylesheet", href="/styles/gift.css")
+        script(src="/scripts/gift.js" defer) 
         link(rel="shortcut icon", href="/images/icon.png", type="image/x-icon")
         title Feliz cumpleaños!!!
     body
@@ -43,13 +44,14 @@ html(lang="en")
             p(class="text green") ¿Con qué soñó ella?
             p(class="text blue") Ella soñó con la luz del sol y con los árboles. Con fuego y agua. Soñó que creó. Y soñó que destruyó. Soñó que cazó, y que fue cazado. Soñó con un refugio.
             p(class="text green") Ah, el sueño original. Tiene millones de años, y todavía funciona. ¿Pero qué cosa real creó ella, detrás de la pantalla?
-            p(class="text blue") Trabajó. Junto a nosotros, para esculpir un mundo real dentro del pliegue de
+            p(class="text blue")
+                | Trabajó. Junto a nosotros, para esculpir un mundo real dentro del pliegue de
                 img(src="", alt="")
                 |, y creó un
                 img(src="", alt="")
-                |para
+                | para
                 img(src="", alt="")
-                , en
+                | , en
                 img(src="", alt="")
             p(class="text green") No puede leer ese pensamiento.
             p(class="text blue") No, aún no alcanzó el nivel más alto. Aquel, que debe alcanzar en el largo sueño de la vida, no en el corto sueño de una carta.
@@ -65,7 +67,7 @@ html(lang="en")
                 img(src="", alt="")
                 |, me gustaría decirle que es
                 img(src="", alt="")
-                |en
+                | en
                 img(src="", alt="")
                 | . Ve tan poco de lo real en su largo sueño.
             p(class="text blue") Y todavía juega.
@@ -122,10 +124,11 @@ html(lang="en")
             p(class="text green") Tú eres el jugador.
             p(class="text blue") Despierta.
         .final
-            p
+            p(class="text")
                 | Para esta carta no solo te dejo un regalo, te dejo una parte de mi amor… Una parte de mi porque
                 | Te amo, no sabes cuanto te amo, te amé y te amaré y una jugadora como tú necesita herramientas para 
                 | hacer sus sueños realidad, el universo quiere darte este regalo, yo quiero darte este regalo. Te amo y 
                 | feliz cumpleaños.
-            button Revelar
-            p=code
+            button(class="btn", id="btn") Revelar
+            p(class="text hide", id="code")=code
+            a(class="text", href="https://www.minecraft.net/en-us/redeem") Dame click!!!

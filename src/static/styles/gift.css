@@ -1,7 +1,42 @@
+body {
+    background-image: url("/images/giftBG.webp");
+}
+
+.content, .final {
+    text-align: center;
+}
+
+.content p, .final p {
+    color: white;
+}
+
+.cart, .final, .content {
+    margin: 25px 35px;
+}
+
+.text {
+    font-size: 30px;
+}
+
+.btn {
+    font-size: 40px;
+    margin-top: 15px;
+}
+
 .blue {
     color: blue;
 }
 
 .green {
     color: green;
+}
+
+.hide {
+    display: none;
+}
+
+a {
+    margin-top: 35px;
+    display: block;
+    color: white;
 }
