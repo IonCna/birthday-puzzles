@@ -18,19 +18,9 @@ html(lang="en")
                 | para desbloquear el código
             button(class="btn", id="start") Empezar
         .puzzles
-            div(class="first song")
-                h2(class="title") Tu primera canción que vas a tocar es:
-                p(class="text") [ C B A G F G A C B A G F E ]
-                h3(class="title finish") LO LOGRASTE!
-            div(class="second song")
-                h2(class="title") Aquí tu segunda canción, sigue así
-                p(class="text") [ G G E F G A G F E D E E C D E F E D C B ]
-                H3(class="title finish") QUE HERMOSA CANCIÓN! :,)
-        .message 
-            h2(class="title") wow lo lograste!!! ya casi acabas mis retos 😠 
-                | bueno, con el siguiente no podrás 😈
-            p(class="text") El siguiente reto se desbloqueará en...
-            p(class="text", id="counter") 10
+            h3(class="title puzzle", id="puzzle")
+            p(class="text puzzle", id="content")
+            h3(class="title puzzle", id="finish")
         ul(class="piano")
             li(class="white b start note")
                 P B

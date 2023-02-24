@@ -18,11 +18,11 @@ router.get("/fourth", (req, res) => {
 })
 
 router.get("/fifth", (req, res) => {
-    res.render("error/inProgress")
+    res.render("puzzle/fifth")
 })
 
 router.get("/sixth", (req, res) => {
-    res.render("error/inProgress")
+    res.render("puzzle/sixth")
 })
 
 

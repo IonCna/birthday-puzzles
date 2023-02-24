@@ -108,6 +108,6 @@ ul li:last-child {
   border-radius: 0 5px 5px 5px;
 }
 
-.finish, .song {
+.puzzle {
   display: none;
 }
