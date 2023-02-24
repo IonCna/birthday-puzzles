@@ -14,7 +14,7 @@ router.get("/third", (req, res) => {
 })
 
 router.get("/fourth", (req, res) => {
-    res.render("error/inProgress")
+    res.render("puzzle/fourth")
 })
 
 router.get("/fifth", (req, res) => {

@@ -1,0 +1,12 @@
+body {
+    background-color: var(--YELLOW);
+    text-align: center;
+}
+
+.title {
+    font-size: 35px;
+}
+
+.instructions {
+    margin-top: 35px;
+}

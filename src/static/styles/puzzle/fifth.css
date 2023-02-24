@@ -10,6 +10,10 @@ body {
   font-size: 25px;
 }
 
+#reset {
+  display: none;
+}
+
 ul {
   height: 18.875em;
   width: 50em;
