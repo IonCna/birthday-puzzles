@@ -42,35 +42,20 @@ function check() {
 
         console.error("[SYSTEM]: El sistema se autodestruirá en...")
 
-        setTimeout(() => {
-            console.error("5...")
-        }, 5000)
+        let counter = 10
 
-        setTimeout(() => {
-            console.error("4...")
-        }, 6000)
+        const id = setInterval(() => {
+            console.error("${counter}...")
+            counter--
 
-        setTimeout(() => {
-            console.error("3...")
-        }, 7000)
+            if(counter < 1) {
+                clearInterval(id)
 
-        setTimeout(() => {
-            console.error("2...")
-        }, 8000)
-
-        setTimeout(() => {
-            console.error("1...")
-        }, 9000)
-
-        setTimeout(() => {
-            console.error("Suerte :')")
-        }, 10000)
-
-        setTimeout(() => {
-            console.clear()
-            console.log("Código: W94")
-            console.warn("consejo: escribe el código en otro lado <3")
-        }, 11000)
+                console.clear()
+                console.log("Código: W94")
+                console.warn("consejo: escribe el código en otro lado <3")
+            }
+        }, 1000)
 
         first = false
         second = false
@@ -153,8 +138,6 @@ function verify(cb, index) {
 
                 return user_ans == correct_ans
             })
-
-            console.log(esMayor)
 
             for (let i = 0; i < esMayor.length; i++) {
                 const element = esMayor[i];

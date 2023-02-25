@@ -8,35 +8,103 @@ var isFirst = false,
 
 class Piano {
     hist = []
-    constructor(result) {
-        console.log(result)
+    song = []
+    status = ""
+
+    get getStatus() {
+        return this.status
+    }
+
+    /**
+     * @param { string } status
+     */
+
+    set setStatus(status) {
+        this.status = status
+    }
+
+    get getSong() {
+        return this.song
+    }
+
+    /**
+     * @param { number[] } song
+     */
+
+    set setSong(song) {
+        this.song = song
+    }
+
+    constructor() {
         for (let i = 0; i < notes.length; i++) {
-            const element = notes[i]
+            const note = notes[i]
             const audio = new Audio(`/audios/${i}.wav`)
 
-            element.onclick = () => {
+            note.onclick = () => {
                 audio.currentTime = 0
                 audio.play()
 
-                if (!result) return
+                if (this.song.length < 1) return
 
-                this.hist.push(i)
-
-                console.log(this.hist, result)
-                console.log(this.hist[i], result[i])
-
-                if (this.hist[i] != result[i]) {
-                    error.style.display = "block"
-                    reset.style.display = "block"
-                }
+                this.registry(i)
             }
+        }
+    }
+
+    /**
+     * @param { number } index 
+     */
+
+    registry(index) {
+        this.hist.push(index)
+        console.log(this.hist)
+
+        for (let i = 0; i < this.hist.length; i++) {
+            const note = this.hist[i];
+
+            if (note !== this.song[i]) {
+                reset.style.display = "block"
+                error.style.display = "block"
+
+                isFirst = false
+
+                break
+            }
+
+            if(this.hist.length == this.song.length) {
+                this.verify()
+                break
+            }
+        }
+    }
+
+    verify() {
+        switch (this.status) {
+            case "first":
+                isFirst = true
+                this.hist = []
+                first()
+                break;
+            case "second":
+                isSecond = true
+                this.hist = []
+                second()
+            default:
+                break;
         }
     }
 }
 
-new Piano()
+const piano = new Piano()
 
 start.onclick = first
+
+reset.onclick = () => {
+    error.style.display = "none"
+    reset.style.display = "none"
+
+    piano.hist = []
+}
 
 function showMessage({ title, song, win }) {
     const titleDOM = document.getElementById("puzzle")
@@ -49,30 +117,74 @@ function showMessage({ title, song, win }) {
     songDOM.innerHTML = song
 
     if (win) {
-        win.style.display = "block"
-
         const winDOM = document.getElementById("finish")
+
+        winDOM.style.display = "block"
         winDOM.innerHTML = win
     }
 }
-
-// [13, 12, 10, 8, 6, 8, 10, 13, 12, 10, 8, 6, 5]
 
 function first() {
     showMessage({
         title: "Intenta tocar la siguiente canción",
         song: "[ C B A G F G A C B A G F E ]",
-        win: null
+        win: isFirst ? "BIEN HECHO!" : null
     })
 
     const result = [13, 12, 10, 8, 6, 8, 10, 13, 12, 10, 8, 6, 5]
-    const piano = new Piano(result)
+    piano.setSong = result
+    piano.setStatus = "first"
 
-    reset.onclick = () => {
-        error.style.display = "none"
-        reset.style.display = "none"
+    if(isFirst) {
+        let timer = 5
 
-        piano.hist = []
+        const id = setInterval(() => {
+            timer--
+
+            showMessage({
+                title: "la siguiente canción estará en",
+                song: timer,
+                win: ""
+            })
+
+            if (timer < 1) {
+                clearInterval(id)
+                second()
+            }
+        }, 1000)
+    }
+}
+
+function second() {
+    showMessage({
+        title: "LA SIGUIENTE CANCIÓN ES...",
+        song: "[ G G E F G A G F E D E E C D E F E D C B ]",
+        win: isSecond ? "MUY BIEN!!!" : null
+    })
+
+    const result = [8, 8, 5, 6, 8, 10, 8, 6, 5, 3, 5, 5, 1, 3, 5, 6, 5, 3, 1, 0]
+    piano.setSong = result
+    piano.setStatus = "second"
+
+    if(isSecond) {
+        let timer = 5
+
+        const id = setInterval(() => {
+            timer--
+
+            showMessage({
+                title: "QUE?! COMO LO HICISTE?!",
+                song: timer,
+                win: "WOAAAAAAAAAAAAAAA"
+            })
+
+            if (timer < 1) {
+                clearInterval(id)
+                
+                fetch("/api/status?index=4&complete=true", { method: "PUT" })
+                window.location.href = "/"
+            }
+        }, 1000)
     }
 }
 
